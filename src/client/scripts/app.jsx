@@ -1,8 +1,9 @@
 import React from 'react';
 import {Bond, TransformBond, ReactiveBond} from 'oo7';
-import {Hash, Rspan, ReactiveComponent} from 'oo7-react';
-import {TransactionProgressBadge} from 'parity-reactive-ui';
-import styles from "../style.css";
+const Parity = require('@parity/parity.js');
+import {bonds, OperationsABI} from 'oo7-parity';
+import {Rspan, ReactiveComponent} from 'oo7-react';
+import {Hash, TransactionProgressLabel} from 'parity-reactive-ui';
 
 // Todo: move elsewhere.
 Array.prototype.filterOut = function (f){
@@ -17,6 +18,23 @@ Array.prototype.filterOut = function (f){
 		}
 	}
 	return matched;
+};
+
+Bond.prototype.reducer = function (accum, init) {
+	var nextItem = function (acc, rest) {
+		console.log('nextItem', acc, rest);
+		if (rest.length === 0) {
+			return acc;
+		}
+		let next = rest.pop();
+		return accum(acc, next).map(([v, i]) => i ? v : nextItem(v, rest));
+	};
+	return this.map(a => {
+		let acc = typeof(init) === 'function' ? init() : typeof(init) === 'object' ? Object.assign({}, init) : init;
+		let r = nextItem(acc, a);
+		console.log('reduced', r, acc);
+		return r;
+	});
 };
 
 function trackName(t) {
@@ -55,11 +73,12 @@ class PendingApproval extends ReactiveComponent {
 	render() {
 		if (!this.state.value)
 			return (<div />);
+		console.log('PEndingApproval render', this.state.value);
 		let checksums = this.state.value.checksums.map((v, i) => (
 			<div key={v.hash}>
-				<span>{v.platform}</span> <span style={{fontSize: 'small'}}>(<Hash style={{fontSize: 'small'}} value={v.hash} />)</span>
+				<span>{v.platform}</span> <span style={{fontSize: 'small'}}>(<Rspan style={{fontSize: 'small'}}>{v.hash}</Rspan>)</span>
 				<span style={{marginLeft: '1em'}}>
-					<TransactionProgressBadge value={this.state.checksums ? this.state.checksums[i] : null}/>
+					<TransactionProgressLabel value={this.state.checksums ? this.state.checksums[i] : null}/>
 				</span>
 			</div>
 		));
@@ -74,7 +93,7 @@ class PendingApproval extends ReactiveComponent {
 						<span style={{padding: '0 0.5em'}}>
 							commit=
 							<a target='top' href={`https://github.com/ethcore/parity/tree/${this.state.value.release}`}>
-								{this.state.value.release.substr(2, 7)}
+								{this.state.value.release.substr(0, 7)}
 							</a>
 						</span>
 						{this.state.value.critical ? (<span> | <span style={{padding: '0 0.5em'}}>CRITICAL</span></span>) : ''}
@@ -88,7 +107,7 @@ class PendingApproval extends ReactiveComponent {
 				<div style={{marginLeft: '1em'}}>{checksums}</div>
 				<a href='#' onClick={this.confirm.bind(this)}>Confirm</a>&nbsp;
 				<a href='#' onClick={this.reject.bind(this)}>Reject</a>&nbsp;
-				<TransactionProgressBadge value={this.state.current}/>
+				<TransactionProgressLabel value={this.state.current}/>
 			</div>
 		);
 	}
@@ -101,9 +120,10 @@ class PendingApprovals extends ReactiveComponent {
 	render() {
 		if (!this.state.value)
 			return (<div>No value given yet</div>);
-		return (<div>{
-			this.state.value.map(v => <PendingApproval key={v.hash} value={v} po={this.props.po} />)
-		}</div>);
+		console.log('PendingApprovals render', this.state.value);
+		return (<div>
+			{this.state.value.map(v => (<PendingApproval key={v.hash} value={v} po={this.props.po} />))}
+		</div>);
 	}
 }
 
@@ -111,18 +131,24 @@ export class App extends React.Component {
 	constructor() {
 		super();
 
-		this.parityOperations = parity.bonds.makeContract(parity.bonds.registry.lookupAddress('parityoperations', 'A'), OperationsProxyABI);
-		let ini = [];
-		ini.checksums = [];
-		this.pendingRequests = this.parityOperations.NewRequestWaiting({}, {toBlock: 'pending'}).reduce((acc, v) =>
-			this.parityOperations.waiting(v.track, v.hash).map(d => {
-				d = parity.api.util.bytesToHex(d);
+		this.parityOperations = bonds.makeContract(bonds.registry.lookupAddress('parityoperations', 'A'), OperationsProxyABI);
+		let that = this;
+		window.po = this.parityOperations;
+		const ini = () => { let r = []; r.checksums = []; return r; };
+		this.pendingRequests = this.parityOperations.NewRequestWaiting({}, {limit: 50, toBlock: 'pending'}).reducer((acc, v) => {
+			console.log('reducing', acc, v.track, v.hash);
+			if (!acc.checksums) {
+				acc.checksums = [];
+			}
+			return that.parityOperations.waiting(v.track, v.hash).map(d => {
+				console.log('waiting map', d);
+				d = Parity.Api.util.bytesToHex(d);
 				if (d === '0x') {
 					return [acc, !acc.checksums.length];
 				}
 
 				// Request is current - we will need to continue iterating.
-				let [name, args] = parity.api.util.abiUnencode(parity.api.abi.operations, d);
+				let [name, args] = Parity.Api.util.abiUnencode(OperationsABI, d);
 				if (name === 'addChecksum') {
 					acc.checksums.push({
 						platform: args._platform,
@@ -143,10 +169,10 @@ export class App extends React.Component {
 					};
 					acc.push(o);
 				}
-
+console.log('returning', acc, false);
 				return [acc, false];
-			}),
-		ini);
+			});
+		}, ini);
 	}
 	render() {
 		return (
