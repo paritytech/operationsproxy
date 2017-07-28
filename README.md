@@ -1,4 +1,4 @@
-# Skeleton dapp.
+# Operations dapp
 
 To install:
 
