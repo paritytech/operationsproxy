@@ -6,6 +6,8 @@
   "dependencies": {
     "babel-core": "^6.24.1",
     "moment": "^2.18.1",
+    "oo7": "^0.5.4",
+    "oo7-react": "^0.4.5",
     "parity-reactive-ui": "^0.4.12",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
