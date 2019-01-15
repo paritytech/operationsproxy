@@ -1,6 +1,11 @@
 body {
-	font: 100% "Trebuchet MS", sans-serif;
+	font-family: "Open Sans", sans-serif;
+  font-weight: 300;
 	margin: 1em;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
 }
 
 div#app {
@@ -13,4 +18,13 @@ img._accountIcon {
 span._hash {
 	font-family: monospace;
 	font-size: large;
+}
+
+.tag {
+  padding: 0 0.5em;
+}
+
+.tag.critical {
+  font-weight: bold;
+  color: red;
 }

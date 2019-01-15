@@ -1,32 +1,36 @@
 {
-  "name": "skeleton",
+  "name": "operationsproxy",
   "version": "0.1.3",
-  "description": "Skeleton dapp",
+  "description": "A dapp for the Operations Proxy contract",
   "main": "webpack.config.js",
   "dependencies": {
-    "babel-core": "^6.24.1",
-    "moment": "^2.18.1",
-    "oo7": "^0.5.4",
-    "oo7-parity": "file:../parity",
-    "oo7-react": "^0.4.5",
-    "parity-reactive-ui": "^0.4.12",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "@parity/api": "^3.0.25",
+    "moment": "2.23.0",
+    "oo7-parity": "0.7.5",
+    "oo7-react": "0.8.7",
+    "react": "16.7.0",
+    "react-dom": "16.7.0",
+    "semantic-ui-react": "^0.84.0"
   },
   "devDependencies": {
-    "babel-loader": "^7.0.0",
-    "babel-preset-react": "^6.24.1",
-    "webpack": "^2.5.1",
-    "webpack-dev-server": "^2.4.5"
+    "@babel/core": "7.2.2",
+    "@babel/preset-env": "7.2.3",
+    "@babel/preset-react": "7.0.0",
+    "babel-loader": "8.0.5",
+    "semistandard": "13.0.1",
+    "webpack": "4.28.4",
+    "webpack-cli": "3.2.1",
+    "webpack-dev-server": "3.1.14"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "semistandard",
     "build": "webpack",
-    "start": "webpack-dev-server --content-base build"
+    "start": "webpack-dev-server --content-base dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ethcore/skeleton.git"
+    "url": "git+https://github.com/paritytech/operationsproxy.git"
   },
   "keywords": [
     "Dapp",
@@ -37,7 +41,7 @@
   "author": "Parity Technologies Ltd",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ethcore/skeleton/issues"
+    "url": "https://github.com/paritytech/operationsproxy/issues"
   },
-  "homepage": "https://github.com/ethcore/skeleton#readme"
+  "homepage": "https://github.com/paritytech/operationsproxy#readme"
 }

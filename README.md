@@ -3,14 +3,20 @@
 To install:
 
 ```
-$ npm install
-$ npm install -g webpack
+$ yarn
 ```
+
+To start:
+
+```
+$ yarn start
+```
+
 
 To build:
 
 ```
-webpack --watch
+$ yarn build
 ```
 
 Files will be build into `dist/`. Just symlink that dir into your dapps path.
