@@ -648,10 +648,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@parity/abi@^3.0.25":
-  version "3.0.25"
-  resolved "https://registry.yarnpkg.com/@parity/abi/-/abi-3.0.25.tgz#450d5ded7413efb7543ff45aa9fa95abca697e20"
-  integrity sha512-JudCBvnk+7GU2oD+EnXkT3zkzh8TvZLcB0ZmXaZ1Vbn5uIJioLpVFnJ61j2whE0Kc5MqiyoAZJGAEPEMbCCrSw==
+"@parity/abi@^3.0.26":
+  version "3.0.26"
+  resolved "https://registry.yarnpkg.com/@parity/abi/-/abi-3.0.26.tgz#90442a9fc9f85d1a1fd5caa32f67d056f4ece797"
+  integrity sha512-noVhbW4yFdmgKqCtsE42YY5gT0gI+aC28IdB0IjgsPrGI4M5FDGzFBO4YmDJrhS/dWgjD2Q0oDEe/MbL9C6rQA==
   dependencies:
     bignumber.js "^8.0.1"
     js-sha3 "0.7.0"
@@ -685,12 +685,12 @@
     store "^2.0.12"
     websocket "^1.0.25"
 
-"@parity/api@^3.0.25":
-  version "3.0.25"
-  resolved "https://registry.yarnpkg.com/@parity/api/-/api-3.0.25.tgz#f0e5736d4ec0b1cb0bcd9690954a521675b4700b"
-  integrity sha512-LkAC/PQrJJz9jmxOb8rxCY8A1w0DBiyMJDSdjRC5XQcVzeyT8UZxNmqF4Q/C9GYIk35STwKKoq8IiZJK8kKVRA==
+"@parity/api@^3.0.26":
+  version "3.0.26"
+  resolved "https://registry.yarnpkg.com/@parity/api/-/api-3.0.26.tgz#7a0161ac64d951e86a5ffeced693365bf53bc745"
+  integrity sha512-dgsJ3JhK4i2TftBwBWm2cq5uhpHfaBWnCEnyFKjBjt5315tkiOae/x7T513Bt94gAzIHKdQr3PTE9J40ww/bAA==
   dependencies:
-    "@parity/abi" "^3.0.25"
+    "@parity/abi" "^3.0.26"
     bignumber.js "^8.0.1"
     blockies "0.0.2"
     es6-error "4.0.2"
@@ -4784,7 +4784,7 @@ semantic-ui-react@^0.84.0:
     prop-types "^15.6.2"
     shallowequal "^1.1.0"
 
-semistandard@^13.0.1:
+semistandard@13.0.1:
   version "13.0.1"
   resolved "https://registry.yarnpkg.com/semistandard/-/semistandard-13.0.1.tgz#73389486821e89ce26ec8d5350b9f15ab467ab26"
   integrity sha512-2GkuX4BsoMEYoufJYRz8/ERbYDfgOO3yP29IBaoXtxl202azlkV1MsFyoSFiM6GBUfL7MSUxSy38KfM9oDAE2g==
