@@ -1,8 +1,8 @@
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import Api from '@parity/api';
 import { bonds, OperationsABI } from 'oo7-parity';
-import { Rspan, ReactiveComponent } from 'oo7-react';
+import { Ra, Rspan, ReactiveComponent } from 'oo7-react';
 import { TransactionProgressLabel } from './TransactionProgressLabel';
 
 import OperationsProxyABI from './abi.json';
@@ -84,7 +84,7 @@ class PendingApproval extends ReactiveComponent {
       <div key={v.hash}>
         <span>{v.platform}</span> <span style={{ fontSize: 'small' }}>
           (<Rspan style={{ fontSize: 'small' }} title={v.hash}>{v.checksum}</Rspan>)
-          [<RemoteChecksum platform={v.platform} semver={this.state.value.semver} />]
+          [<RemoteChecksum platform={v.platform} semver={this.state.value.semver} checksum={v.checksum} />]
         </span>
         <span style={{ marginLeft: '1em' }}>
           <TransactionProgressLabel value={this.state.checksums ? this.state.checksums[i] : null} />
@@ -151,12 +151,14 @@ export class App extends React.Component {
   constructor () {
     super();
 
-    this.parityOperations = bonds.makeContract(bonds.registry.lookupAddress('parityoperations', 'A'), OperationsProxyABI);
+    this.address = bonds.registry.lookupAddress('parityoperations', 'A');
+    this.parityOperations = bonds.makeContract(this.address, OperationsProxyABI);
+
     let that = this;
     window.po = this.parityOperations;
-    const ini = () => { let r = []; r.checksums = []; return r; };
+    const ini = () => { let r = []; r.maxOld = 30; r.checksums = []; return r; };
     this.pendingRequests = BondReducer(
-      this.parityOperations.NewRequestWaiting({}, { limit: 50, toBlock: 'pending' }),
+      this.parityOperations.NewRequestWaiting({}, { limit: 100, toBlock: 'pending' }),
       (acc, v) => {
         if (!acc.checksums) {
           acc.checksums = [];
@@ -164,7 +166,8 @@ export class App extends React.Component {
         return that.parityOperations.waiting(v.track, v.hash).map(d => {
           d = Api.util.bytesToHex(d);
           if (d === '0x') {
-            return [acc, !acc.checksums.length];
+            acc.maxOld--;
+            return [acc, acc.maxOld === 0];
           }
 
           // Request is current - we will need to continue iterating.
@@ -200,10 +203,11 @@ export class App extends React.Component {
     return (
       <div>
         <h1>Operations proxy</h1>
+        <p>Contract address: <code><Rspan>{this.address}</Rspan></code></p>
         <PendingApprovals value={this.pendingRequests} po={this.parityOperations} />
         <h3>Checklist</h3>
         <ul>
-          <li>Check if keccak256 hashes match.</li>
+          <li>Check if displayed keccak256 hash matches the one in the release bucket.</li>
           <li>Fetch binary and calculate the hash to confirm that CI produced it correctly.</li>
           <li>Check the binary size.</li>
         </ul>
@@ -216,6 +220,7 @@ class RemoteChecksum extends React.Component {
   constructor (...args) {
     super(...args);
 
+    this.githubHint = bonds.githubhint;
     this.state = {
       url: null
     };
@@ -238,9 +243,16 @@ class RemoteChecksum extends React.Component {
 
   render () {
     const { url } = this.state;
+    const { checksum } = this.props;
 
     return (
-      <a href={url}>release.parity.io</a>
+      <Fragment>
+        <a href={url}>keccak</a>
+        |
+        <Ra href={this.githubHint.entries(checksum).map(x => x[0])}>
+          githubhint(keccak)
+        </Ra>
+      </Fragment>
     );
   }
 }
