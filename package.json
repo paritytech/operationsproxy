@@ -4,7 +4,7 @@
   "description": "A dapp for the Operations Proxy contract",
   "main": "webpack.config.js",
   "dependencies": {
-    "@parity/api": "^3.0.26",
+    "@parity/api": "^3.0.27",
     "moment": "2.23.0",
     "oo7-parity": "0.7.5",
     "oo7-react": "0.8.8",
