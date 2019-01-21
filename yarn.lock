@@ -3965,12 +3965,12 @@ oo7-parity@0.7.5:
     bignumber.js "^4.0.0"
     oo7 "^0.5.9"
 
-oo7-react@0.8.8:
-  version "0.8.8"
-  resolved "https://registry.yarnpkg.com/oo7-react/-/oo7-react-0.8.8.tgz#4a2e77fcd2e0c89b5f99b7cbdd1a7a58c59683ca"
-  integrity sha512-jjQ58/pfVuwBcteVINjKYQCdf20EEnxi/g+Xc+pz6Ot9p1ALEiPGEdw8dmf1ucfbaUmGDUiT5HcueAaw+5cXGQ==
+oo7-react@0.8.9:
+  version "0.8.9"
+  resolved "https://registry.yarnpkg.com/oo7-react/-/oo7-react-0.8.9.tgz#1dddac117e129346b48df4b51d2c5fef12a843ee"
+  integrity sha512-gS/EyqOQgLIAOpbVFR9oLuDtk60TXCbXWs9eN9Ia1n4/We4QXfrHCAcGo2NKYw0li61ZZjujNKHhKDOwJGfxPw==
   dependencies:
-    oo7 "^0.7.7"
+    oo7 "^0.7.8"
     react "^16.5.2"
 
 oo7@^0.5.9:
@@ -3978,10 +3978,10 @@ oo7@^0.5.9:
   resolved "https://registry.yarnpkg.com/oo7/-/oo7-0.5.9.tgz#a4e948cab6ab9e1bf032c9ad588f4cbf31478b51"
   integrity sha512-j7JqQLslLhCXvyX4mVnZaCBTleZCKNwIVxV3lqBirRCWPlj+yvbM0c3kXvQ9fokwBReu+sbF48ds2ufTb8k4Rg==
 
-oo7@^0.7.7:
-  version "0.7.7"
-  resolved "https://registry.yarnpkg.com/oo7/-/oo7-0.7.7.tgz#c569178b616dc700ab3cb8d685251ed063617126"
-  integrity sha512-+sNGi5sIFHpBOhQHpWQB3iwpzFQ9M9bGJtUk2aCeVJVYM0hpez3uklySbOQpJ+kv4PwZ+4eapkq8Vs2lReq5jg==
+oo7@^0.7.8:
+  version "0.7.8"
+  resolved "https://registry.yarnpkg.com/oo7/-/oo7-0.7.8.tgz#3140432a4547624ea6b71f3d13244c6a2d9d8f9c"
+  integrity sha512-j3MydpBTjpxeAD7kc08Pnuc90NY9EeW53jXp0c/CwSncS6WCzHg4KY+bZQZtmWwW5ESdAcmR8ZolIIHWWTNusg==
 
 opn@^5.1.0:
   version "5.4.0"
