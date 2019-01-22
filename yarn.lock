@@ -4022,10 +4022,10 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
-oo7-parity@0.7.5:
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/oo7-parity/-/oo7-parity-0.7.5.tgz#dfd20208e0613cf4442443a17d73aa4337895039"
-  integrity sha512-tMa+1BmmYXRxUDyjqAdwROo05uEvvL6VVmk5CZMcF7/RVucHLlM4R6/CgSua7PKXbpyTrTXRY+KgENixHdV5kQ==
+oo7-parity@0.7.6:
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/oo7-parity/-/oo7-parity-0.7.6.tgz#401aff574a2f4ac2808671778ff3ce5ed73d9ebc"
+  integrity sha512-qII9HhaTS97gDI9QuGGrnGyZWFNiNXSLS9nMyQHsMOD02SbUZ6tM5NsDIaw3DcpXf45rB4zUO0jk2kBzsr+07g==
   dependencies:
     "@parity/api" "^2"
     bignumber.js "^4.0.0"
