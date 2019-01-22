@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "dependencies": {
     "@parity/api": "^3.0.29",
-    "moment": "2.23.0",
+    "moment": "2.24.0",
     "oo7-parity": "0.7.5",
     "oo7-react": "0.8.9",
     "react": "16.7.0",
