@@ -6,7 +6,7 @@
   "dependencies": {
     "@parity/api": "^4.0.2",
     "moment": "2.24.0",
-    "oo7-parity": "0.7.6",
+    "oo7-parity": "0.7.7",
     "oo7-react": "0.8.10",
     "react": "16.7.0",
     "react-dom": "16.7.0",
