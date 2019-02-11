@@ -657,13 +657,13 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@parity/abi@^4.0.2":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@parity/abi/-/abi-4.0.2.tgz#09b2a42576976d06962e5ea467f555989ec7f438"
-  integrity sha512-k0wBxz1tlwm61ncvNiaoWHHe0Bu9c9qKlUZLsRw3F5EOsFwKuQ1S5Etr5nHbjEJISrVwxdD2dNk1ZUervRswsw==
+"@parity/abi@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@parity/abi/-/abi-4.0.3.tgz#83b65ae0c3039f8b14cd2e9b9ca8721fc165bb0a"
+  integrity sha512-QLJ0IOhShN2oDb1GVPiKYjEOlKWCrVIiMRiak9aoUFg0VMPXTBitV6VpK1KE/cFMk+if6xIlm1O7ceiqVHQL8w==
   dependencies:
     bignumber.js "^8.0.1"
-    js-sha3 "0.7.0"
+    js-sha3 "0.8.0"
     utf8 "^3.0.0"
 
 "@parity/abi@~2.1.4":
@@ -694,19 +694,19 @@
     store "^2.0.12"
     websocket "^1.0.25"
 
-"@parity/api@^4.0.2":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@parity/api/-/api-4.0.2.tgz#1547f50bb44442788fc73985f45d4447d7f51fa4"
-  integrity sha512-n7BuQr6zTo/c74By5Js0yuXGIIrNeCn9bdhKqEwM287QOJCDP+jDyj4I/8X6Ezwfb2A6N6/MND7UGb4flSXYDw==
+"@parity/api@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@parity/api/-/api-4.0.3.tgz#73aec7f726d094841431d7611658a0334b13b79d"
+  integrity sha512-Evl0ShSMLEXLMJBSusud5u4+HE3AwMDpVIxKlBlGEhhw19zXf0mq4Br0buFQSatdDMeg4Ngt0D2jUo8JAWWdww==
   dependencies:
-    "@parity/abi" "^4.0.2"
+    "@parity/abi" "^4.0.3"
     bignumber.js "^8.0.1"
     blockies "0.0.2"
-    es6-error "4.0.2"
+    es6-error "4.1.1"
     es6-promise "^4.1.1"
     eventemitter3 "^3.1.0"
     isomorphic-fetch "^2.2.1"
-    js-sha3 "0.5.5"
+    js-sha3 "0.8.0"
     lodash "^4.17.11"
     store "^2.0.12"
     websocket "^1.0.25"
@@ -2058,6 +2058,11 @@ es6-error@4.0.2:
   resolved "https://registry.yarnpkg.com/es6-error/-/es6-error-4.0.2.tgz#eec5c726eacef51b7f6b73c20db6e1b13b069c98"
   integrity sha1-7sXHJurO9Rt/a3PCDbbhsTsGnJg=
 
+es6-error@4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/es6-error/-/es6-error-4.1.1.tgz#9e3af407459deed47e9a91f9b885a84eb05c561d"
+  integrity sha512-Um/+FxMr9CISWh0bi5Zv0iOD+4cFh5qLeks1qhAopKVAJw3drgKbKySikp7wGhDL0HPeaja0P5ULZrxLkniUVg==
+
 es6-promise@^4.1.1:
   version "4.2.5"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.5.tgz#da6d0d5692efb461e082c14817fe2427d8f5d054"
@@ -3306,10 +3311,10 @@ js-sha3@0.5.5:
   resolved "https://registry.yarnpkg.com/js-sha3/-/js-sha3-0.5.5.tgz#baf0c0e8c54ad5903447df96ade7a4a1bca79a4a"
   integrity sha1-uvDA6MVK1ZA0R9+Wreekobynmko=
 
-js-sha3@0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/js-sha3/-/js-sha3-0.7.0.tgz#0a5c57b36f79882573b2d84051f8bb85dd1bd63a"
-  integrity sha512-Wpks3yBDm0UcL5qlVhwW9Jr9n9i4FfeWBFOOXP5puDS/SiudJGhw7DPyBqn3487qD4F0lsC0q3zxink37f7zeA==
+js-sha3@0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/js-sha3/-/js-sha3-0.8.0.tgz#b9b7a5da73afad7dedd0f8c463954cbde6818840"
+  integrity sha512-gF1cRrHhIzNfToc802P800N8PpXS+evLLXfsVpowqmAFR9uwbi89WvXg2QspOmXL8QL86J4T1EpFu+yUkwJY3Q==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
