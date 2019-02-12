@@ -9,7 +9,7 @@
     "oo7-parity": "0.7.7",
     "oo7-react": "0.8.10",
     "react": "16.8.1",
-    "react-dom": "16.7.0",
+    "react-dom": "16.8.1",
     "semantic-ui-react": "^0.85.0"
   },
   "devDependencies": {
