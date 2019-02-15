@@ -158,7 +158,7 @@ export class App extends React.Component {
     window.po = this.parityOperations;
     const ini = () => { let r = []; r.maxOld = 30; r.checksums = []; return r; };
     this.pendingRequests = BondReducer(
-      this.parityOperations.NewRequestWaiting({}, { limit: 100, toBlock: 'pending' }),
+      this.parityOperations.NewRequestWaiting({}, { limit: 50, toBlock: 'pending' }),
       (acc, v) => {
         if (!acc.checksums) {
           acc.checksums = [];
@@ -221,6 +221,7 @@ class RemoteChecksum extends React.Component {
     super(...args);
 
     this.githubHint = bonds.githubhint;
+    window.gh = this.githubHint;
     this.state = {
       url: null
     };
