@@ -676,15 +676,6 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@parity/abi@^4.0.3":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@parity/abi/-/abi-4.0.3.tgz#83b65ae0c3039f8b14cd2e9b9ca8721fc165bb0a"
-  integrity sha512-QLJ0IOhShN2oDb1GVPiKYjEOlKWCrVIiMRiak9aoUFg0VMPXTBitV6VpK1KE/cFMk+if6xIlm1O7ceiqVHQL8w==
-  dependencies:
-    bignumber.js "^8.0.1"
-    js-sha3 "0.8.0"
-    utf8 "^3.0.0"
-
 "@parity/abi@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@parity/abi/-/abi-5.1.2.tgz#0030c6c1fb7fc88add214dffbe8d36c2f4ab585d"
@@ -694,24 +685,7 @@
     js-sha3 "0.8.0"
     utf8 "^3.0.0"
 
-"@parity/api@^4":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@parity/api/-/api-4.0.3.tgz#73aec7f726d094841431d7611658a0334b13b79d"
-  integrity sha512-Evl0ShSMLEXLMJBSusud5u4+HE3AwMDpVIxKlBlGEhhw19zXf0mq4Br0buFQSatdDMeg4Ngt0D2jUo8JAWWdww==
-  dependencies:
-    "@parity/abi" "^4.0.3"
-    bignumber.js "^8.0.1"
-    blockies "0.0.2"
-    es6-error "4.1.1"
-    es6-promise "^4.1.1"
-    eventemitter3 "^3.1.0"
-    isomorphic-fetch "^2.2.1"
-    js-sha3 "0.8.0"
-    lodash "^4.17.11"
-    store "^2.0.12"
-    websocket "^1.0.25"
-
-"@parity/api@^5.1.2":
+"@parity/api@^5", "@parity/api@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@parity/api/-/api-5.1.2.tgz#31c7427461866b4bd647cfb9f5612e92edcbeb89"
   integrity sha512-bifUYIsmM+5q7EZVp16FRUKcfb4nwbe50SmWSSRvgGB50U/HiHUY2IAX6mUYbdf5Ks5e2/vyA1XQsqbdLks1Bw==
@@ -2082,11 +2056,6 @@ es6-error@4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/es6-error/-/es6-error-4.0.2.tgz#eec5c726eacef51b7f6b73c20db6e1b13b069c98"
   integrity sha1-7sXHJurO9Rt/a3PCDbbhsTsGnJg=
-
-es6-error@4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/es6-error/-/es6-error-4.1.1.tgz#9e3af407459deed47e9a91f9b885a84eb05c561d"
-  integrity sha512-Um/+FxMr9CISWh0bi5Zv0iOD+4cFh5qLeks1qhAopKVAJw3drgKbKySikp7wGhDL0HPeaja0P5ULZrxLkniUVg==
 
 es6-promise@^4.1.1:
   version "4.2.5"
@@ -4024,12 +3993,12 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
-oo7-parity@0.7.8:
-  version "0.7.8"
-  resolved "https://registry.yarnpkg.com/oo7-parity/-/oo7-parity-0.7.8.tgz#93b7483ff437516949bd5dd4748d6b4eb31da44d"
-  integrity sha512-5chLRHOQf4AUsFTGhlIr1CwoHLBmI8wHaUZ+MoaRgg+7WiuJEAyY40jf8DXOrQE+cOZF2/X9aDG/q9DS2oFlgw==
+oo7-parity@0.7.9:
+  version "0.7.9"
+  resolved "https://registry.yarnpkg.com/oo7-parity/-/oo7-parity-0.7.9.tgz#1402fb5e30cbd3617c59e2ffa53d438b5c0ce6e8"
+  integrity sha512-5yi7L8nDSah2gm8yMdhoNPqL3oLqogHJbEWRZ+BdMwsRO6nLQXd5T/0H4oA//aevpKjt3vQt1HZ67Lo92MGDgQ==
   dependencies:
-    "@parity/api" "^4"
+    "@parity/api" "^5"
     bignumber.js "^8.0.2"
     oo7 "^0.5.9"
 
