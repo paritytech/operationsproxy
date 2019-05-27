@@ -719,21 +719,21 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@parity/abi@^5.1.3":
-  version "5.1.3"
-  resolved "https://registry.yarnpkg.com/@parity/abi/-/abi-5.1.3.tgz#0503b3e541c6e02824f86000cef6fca0a0d9ab81"
-  integrity sha512-hO8q++qYEUTyWlcaijBdcl+CUXt0f862H+KMOCe31RdZfJcTV2D2qnS0z1kGTZr+AEynGatBZGuvmaZV6mIPNQ==
+"@parity/abi@^5.1.4":
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/@parity/abi/-/abi-5.1.4.tgz#c00ed077cf831dac378b15a701c972f8c3484049"
+  integrity sha512-Ppdyg7T39RLDBuqjmgjb24QWM36fxWJTFTFv+dQcebl0OTkX77ugfFDGdOTzrQZoAb1ro6BpzyMR5XZVzsWOWg==
   dependencies:
     bignumber.js "^8.0.1"
     js-sha3 "0.8.0"
     utf8 "^3.0.0"
 
-"@parity/api@^5", "@parity/api@^5.1.3":
-  version "5.1.3"
-  resolved "https://registry.yarnpkg.com/@parity/api/-/api-5.1.3.tgz#c4c1a5c0cbc41d75ad8a58f37a478a09ce5d0ea3"
-  integrity sha512-UiN2mdgkEIID/rsqRRBn5AMtIPvrXhJhrwGLXL3vWf9EsiF0GfTuIBYqflz0nPTZY1PySa7hi1XwOmnqprdqNg==
+"@parity/api@^5", "@parity/api@^5.1.4":
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/@parity/api/-/api-5.1.4.tgz#265139ae316d14214a7dc1c158e85b7d618de750"
+  integrity sha512-qYXqcTLpw7fIzaVEoR3xJAd+t7UtTg/cE0mC0LRqd2eml1jkFsZm3qUWVwLQWnofDzlgdR68fnxnicL111xbPg==
   dependencies:
-    "@parity/abi" "^5.1.3"
+    "@parity/abi" "^5.1.4"
     bignumber.js "^8.0.1"
     blockies "0.0.2"
     es6-error "4.0.2"
