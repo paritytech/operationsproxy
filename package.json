@@ -8,7 +8,7 @@
     "moment": "2.24.0",
     "oo7-parity": "0.7.9",
     "oo7-react": "0.8.13",
-    "react": "16.8.6",
+    "react": "16.9.0",
     "react-dom": "16.9.0",
     "semantic-ui-react": "^0.87.3"
   },
