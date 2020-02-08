@@ -22,6 +22,9 @@
     "webpack-cli": "3.3.10",
     "webpack-dev-server": "3.10.1"
   },
+  "resolutions": {
+    "kind-of": ">=6.0.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "semistandard",
